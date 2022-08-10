@@ -1,113 +1,54 @@
-## Examples of completed connector documentation:
-
-* https://docs.pingidentity.com/bundle/davinci-pingone-risk-connector/page/enk1642800997036.html
-* https://docs.pingidentity.com/bundle/davinci-pingone-connector/page/hlh1642792860912.html
-
-
-# Template Simple Connector
+# SendGrid Connector
 
 
 ## Doc draft
 
-Author: 
-
+Author: Kathy Khong 
 
 # Introduction
 
-[Describe the product. List the main use cases the connector supports.]
+The SendGrid connector to enhances your registration flow by enabling multiple capabilities for contact creation and email delivery.
+With SendGrid, you will be able to:
+  * Create a contact
+  * Update an exisiting contact
+  * Read a contact using an id 
+  * Import a contact job status 
+  * Create a Single Send 
+  * Schedule a Single Send 
 
+  Twilio SendGrid is a cloud-based SMTP service that provides email delivery at scale, allowing you to send email without the cost and complexity of maintaining your own email servers.
+
+  For more information, see [Twilio SendGrid Documentation.](https://docs.sendgrid.com/) 
 
 # Setup
 
-
-## Resources
-
-For information and setup help, see the following sections of the [service name] documentation:
-
-
-## [Link to resources from the service documentation
-
-
-## Requirements
-
-To use the connector, you'll need:
-
-
-
-* [List pre-requisites]
-* 
-
-
-## [Task name]
-
-[Describe what needs to be done before adding the connection in Singular Key]
-
-
-
-1. [Steps]
-2. 
-
-
-## [Task name]
-
-[Describe what needs to be done before adding the connection in Singular Key]
-
-
-
-1. [Steps]
-2. 
-
-
 ## Setting up the connector
+In DaVinci, add a SendGrid connection. For help, see [Adding a Connection.](https://docs.pingidentity.com/bundle/davinci/page/srw1637101394177.html) 
 
-In Singular Key, add a **PingOne SSO** connection. For help, see [Adding a connection](https://docs.google.com/document/d/1Sc9tD5tn9dl79qOWup0k3eKk5hrNVI8lZPAdm8loeiA/edit#).
+## Connector Configuration 
 
-
-### Connector settings
-
-[List and explain the connector settings that appear when the connection is opened from the **Connections** page. If you did not cover it earlier in the **Setup** section, tell the user how to complete each configuration field or where to get the information they need.
-
-These typically on the **General** tab, but some connectors have a different name or multiple configuration tabs. Don't document **Capabilities**, or **In Flows**.]
-
+### API Key 
+You must create your first API key using the [Twilio SendGrid App.](https://signup.sendgrid.com/)
 
 # Using the connector in a flow
 
-[Describe how to use the connector after it has been set up.]
-
-You can use the connector in a variety of use cases, such as:
-
-
-## [Use case]
-
-[Describe how to use the connector in this use case. Does it come with a related flow template? Is there a generic use case flow to follow in the Singular Key core documentation?]
-
-
-## [Use case]
-
-[Describe how to use the connector in this use case. Does it come with a related flow template? Is there a generic use case flow to follow in the Singular Key core documentation?]
-
+Once a SendGrid connector has been added you can click to configure the connector's capabilities. 
 
 # Capabilities
 
 Leave this section blank: it will be generated automatically
 
 
-# Troubleshooting
-
-[Optional section]
-
+# Troubleshooting 
 
 ## Common solutions
 
-[Describe solutions to common problems the user might encounter when setting up or using the connector. If there are any required steps, include them in the **Setup** section.]
+### Error when deleting a contact
+Only one of ids OR Delete all contacts should be set, not both.
 
+### Error when scheduling a Single Send using a Single Send id
+Single Send email config must have either a custom unsubscribe url OR suppression group id to schedule. In additon, the email config HTML Content  and Sender id must contain a valid value to be able to schedule the Single Send. 
 
-## Troubleshooting resources
-
-
-### [Resource description]
-
-[Describe other resources, tools, reference information, or links that might be helpful when troubleshooting.]
 
 
 ### Testing capabilities
